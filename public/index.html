@@ -1,0 +1,102 @@
+<!doctype html>
+<html ng-app="khipsTodo"> <!-- AngularJS application name-->
+<head>
+	
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"> <!-- optimize mobile viewport -->
+	<title>MongoDB ExpressJS AngularJS NodeJS MDL - Todo Application</title>
+
+	<!-- load material design lite framework -->
+	<link rel="stylesheet" href="assets/mdl-1.0.4/material.min.css">
+	<script src="assets/mdl-1.0.4/material.min.js"></script>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+	<!-- load angularjs framework -->
+	<script src="assets/angular-1.4.3/angular.min.js"></script>
+	<script src="assets/angular-1.4.3/angular-mocks.js"></script>
+
+	<!-- load all JS used in application -->
+	<script src="js/controllers/main.js"></script> 			<!-- load controller -->
+	<script src="js/services/todos.js"></script> 			<!-- load todo service -->
+	<script src="js/directives/directives.js"></script> 	<!-- load todo directives -->
+	<script src="js/core.js"></script> 						<!-- load main application -->
+
+	<!-- Ajust style -->
+	<style type="text/css">
+		.khips-full-size{
+			width: 100%;
+		}
+	</style>
+
+</head>
+
+<body ng-controller="mainController"> <!-- set controller on body -->
+	
+	<!-- Always shows a header, even in smaller screens. -->
+	<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+
+		<header class="mdl-layout__header">
+			<div class="mdl-layout__header-row">
+			  <!-- Title -->
+			  <span class="mdl-layout-title">M.E.A.N. Todolist</span>
+			  <!-- Add spacer, to align navigation to the right -->
+			  <div class="mdl-layout-spacer"></div>
+			  <!-- Navigation. We hide it in small screens. -->
+			  <nav class="mdl-navigation mdl-layout--large-screen-only">
+			    <a class="mdl-navigation__link" href="https://github.com/khips/poc-todolist-angularjs-mongodb">Github</a>
+			  </nav>
+			</div>
+		</header>
+	  	
+	  	<!-- Main page -->
+	  	<main class="mdl-layout__content">
+			
+			<div class="mdl-grid">
+				<div class="mdl-cell mdl-cell--3-col"></div>
+				<div class="mdl-cell mdl-cell--6-col">
+
+					<!-- todoList directive  -->					
+					<todo-list></todo-list>
+
+				</div>
+				<div class="mdl-cell mdl-cell--3-col"></div>
+			</div>
+
+			<div class="mdl-grid">
+				<div class="mdl-cell mdl-cell--3-col"></div>
+				<div class="mdl-cell mdl-cell--1-col">
+					
+					<!-- MDL Spinner Component -->	
+					<div class="mdl-spinner mdl-js-spinner is-active" ng-show="loading"></div>
+
+				</div>
+				<div class="mdl-cell mdl-cell--5-col">
+
+					<!-- todoForm directive  -->					
+					<todo-form></todo-form>	
+
+				</div>
+				<div class="mdl-cell mdl-cell--3-col"></div>
+			</div>
+
+			<div class="mdl-grid">
+				<div class="mdl-cell mdl-cell--2-col"></div>
+				<div class="mdl-cell mdl-cell--8-col">
+					<center>
+						<a href="https://angularjs.org/" title="AngularJS"> AngularJS </a> - 
+						<a href="" title="NodeJS"> NodeJS </a> - 
+						<a href="http://expressjs.com/" title="ExpressJS"> ExpressJS </a> - 
+						<a href="https://www.mongodb.org/" title="MongoDB"> MongoDB </a> - 
+						<a href="http://www.getmdl.io/" title="Material Design Lite"> Material Design Lite </a> - 
+						<a href="http://karma-runner.github.io/0.8/index.html" title="Karma"> Karma </a> - 
+						<a href="http://jasmine.github.io/" title="Jasmine"> Jasmine </a> - 
+						<a href="http://phantomjs.org/" title="PhantomJS"> PhantomJS </a> - 
+						<a href="http://mochajs.org/" title="MochaJS"> MochaJS </a>
+					</center>
+				</div>
+				<div class="mdl-cell mdl-cell--2-col"></div>
+			</div>
+		</main>
+	</div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp khips-full-size">
+	<thead>
+		<tr>
+			<th>State</th>
+			<th class="mdl-data-table__cell--non-numeric khips-full-size">To do</th>
+			<th>Action</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="todo in todos"> <!-- Loop in todo list -->
+			
+			<td>
+				<!-- MDL checkbox component -->
+				<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-{{todo._id}}">
+
+				<!-- updateTodo() will update todo on click -->
+				<input type="checkbox" class="mdl-checkbox__input" id="checkbox-{{todo._id}}" 
+				ng-click="updateTodo(todo._id, !todo.done)"  ng-checked="todo.done"/>
+
+				</label>
+			</td>
+			
+			<td class="mdl-data-table__cell--non-numeric">{{ todo.text }}</td>
+			
+			<td>
+				<button ng-click="deleteTodo(todo._id)" class="mdl-button mdl-js-button mdl-button--icon">
+					<i class="material-icons">delete</i> <!-- icon delete -->
+				</button>
+			</td>
+		</tr>
+	</tbody>
+</table>

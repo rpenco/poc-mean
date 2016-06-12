@@ -1,0 +1,25 @@
+{
+  "name": "poc-todolist-angularjs-mongodb",
+  "version": "0.0.0",
+  "description": "POC todolist application",
+  "main": "server.js",
+  "author": "Romain PENCO",
+  "dependencies": {
+    "nodemon": "~1.4.1",
+    "express": "~4.13.3",
+    "mongoose": "~4.1.3",
+    "method-override": "~2.3.5",
+    "morgan": "~1.6.1",
+    "body-parser": "~1.13.3"
+  },
+  "devDependencies": {
+    "karma": "~0.13.9",
+    "jasmine-core": "~2.3.4",
+    "karma-jasmine": "~0.3.6",
+    "phantomjs": "~1.9.18",
+    "karma-phantomjs-launcher": "~0.2.1",
+    "superagent": "~1.3.0",
+    "mocha": "~2.2.5",
+    "expect.js": "~0.3.1"
+  }
+}
