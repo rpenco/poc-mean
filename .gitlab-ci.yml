@@ -1,0 +1,21 @@
+image: node:4.4.5
+
+cache:
+  paths:
+  - node_modules/
+
+stages:
+  - test
+
+test-frontend:
+  stage: test
+  script:
+    - run npm install
+    - run npm run test-frontend
+
+test-backend:
+  stage: test
+  script:
+    - run npm install
+    - run npm install -g jasmine-core karma-jasmine karma karma-phantomjs-launcher karma-chrome-launcher
+    - run npm run test-backend
