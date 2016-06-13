@@ -23,5 +23,5 @@ test-backend:
   stage: test
   script:
     - npm install
-    - npm install -g jasmine-core karma-jasmine karma karma-phantomjs-launcher karma-chrome-launcher
+    - npm install -g jasmine-core karma-jasmine karma karma-phantomjs-launcher karma-chrome-launcher mocha
     - npm run test-backend
