@@ -10,12 +10,12 @@ stages:
 test-frontend:
   stage: test
   script:
-    - run npm install
-    - run npm run test-frontend
+    - npm install
+    - npm run test-frontend
 
-test-backend:
-  stage: test
-  script:
-    - run npm install
-    - run npm install -g jasmine-core karma-jasmine karma karma-phantomjs-launcher karma-chrome-launcher
-    - run npm run test-backend
+# test-backend:
+#   stage: test
+#   script:
+#     - npm install
+#     - npm install -g jasmine-core karma-jasmine karma karma-phantomjs-launcher karma-chrome-launcher
+#     - npm run test-backend
