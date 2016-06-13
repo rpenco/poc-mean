@@ -7,10 +7,10 @@ var methodOverride = require('method-override');
 var database = require('./config/database'); // load the database config
 var config = require('./config/config'); // load the app config
 var app = express(); // create app
-var port = config.port;
+var port = process.env.PORT || config.port;
 
 // configuration ---------------------------------------------------------------
-mongoose.connect(database.url); // connect to mongoDB database
+mongoose.connect(process.env.MONGO_URI || database.url); // connect to mongoDB database
 
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({
@@ -36,6 +36,6 @@ exports.listen = function () {
 };
 
 exports.close = function (callback) {
-  
+
 };
 // Start app with "node server.js"
