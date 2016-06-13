@@ -1,27 +1,35 @@
 image: node:4.4.5
 
+# Connect service MongoDB
 services:
   - mongo:latest
 
+# Redéfini l'URL vers MongoDB (utilisé par server.js)
 variables:
   MONGO_URI: 'mongodb://mongo/poc-todolist'
 
+# Mise en cache des modules
 cache:
   paths:
   - node_modules/
 
+# Installation des modules
+before_script:
+  - npm install
+  - npm install -g jasmine-core karma-jasmine karma karma-phantomjs-launcher karma-chrome-launcher mocha
+
+# Definitions des étapes
 stages:
   - test
 
-# test-frontend:
-#   stage: test
-#   script:
-#     - npm install
-#     - npm run test-frontend
+# Tests Karma / AngularJS
+test-frontend:
+  stage: test
+  script:
+    - npm run test-frontend
 
+# Tests Mocha / NodeJS
 test-backend:
   stage: test
   script:
-    - npm install
-    - npm install -g jasmine-core karma-jasmine karma karma-phantomjs-launcher karma-chrome-launcher mocha
     - npm run test-backend
