@@ -2,38 +2,42 @@
 
 Proof of concept d'une todolist M.E.A.N (MongoDB, ExpressJS, AngularJS, NodeJS) avec mise en oeuvre des frameworks MDL (Material Design Ligth), Karma, Jasmine, Mocha.
 
-![](https://raw.githubusercontent.com/khips/poc-todolist-angularjs-mongodb/master/screenshot.png)
+![](./screenshot.png)
 
 ## Techonologies
 
-###Backend
+### Backend
 
-- [MongoDB](https://www.mongodb.org/) - Base de données NoSQL 
-- [NodeJS](https://nodejs.org/) - Utilisé comme un serveur HTTP
+- [MongoDB](https://www.mongodb.org/) - Base de données NoSQL
+- [NodeJS](https://nodejs.org/) - Utilisé comme serveur HTTP
 - [ExpressJS](http://expressjs.com/) - Utilisé pour la mise en oeuvre de l'API
 
 
-###Frontend
+### Frontend
 
 - [AngularJS](https://angularjs.org/) - Framework Javascript
 - [Material Design Lite (MDL)](http://www.getmdl.io/) - Framework graphique
 
-###Test
- 
-- [Karma](http://karma-runner.github.io/)/[Jasmine](http://jasmine.github.io/) - Tests JS pour AngularJS 
+### Tests
+
+- [Karma](http://karma-runner.github.io/)/[Jasmine](http://jasmine.github.io/) - Tests JS pour AngularJS
 - [Mocha](http://mochajs.org/) - Tests NodeJS pour l'API
 
 
 ## Installation
 
 ```
-$ git clone git@github.com:khips/poc-todolist-angularjs-mongodb.git
-$ cd ./poc-todolist-angularjs-mongodb
+$ git clone http://gitlab.penco.fr/romain/poc-mongodb-expressjs-angularjs-nodejs.git
+$ cd ./poc-mongodb-expressjs-angularjs-nodejs
 $ npm install
-$ sudo npm install -g nodemon
-$ sudo npm install -g karma
-$ sudo npm install -g mocha
-```	
+```
+
+N.B: Prévoir une connexion `MongoDB`. Par exemple en utilisant le container MongoDB officiel: `docker run --name mongodb -d mongo` et en replaçant l'IP dans la configuration.
+
+Pour les tests:
+```
+$ sudo npm install -g jasmine-core karma-jasmine karma karma-phantomjs-launcher karma-chrome-launcher
+```
 
 ## Exécution
 
@@ -46,13 +50,11 @@ $ nodemon
 Backend/API (NodeJS):
 
 ```
-$ cd ./test/nodejs/
-$ mocha todo.test.js
+$ npm start test-backend
 ```
 
 Frontend (AngularJS):
 
 ```
-$ cd ./test/angular/ 
-$ karma start
+$ npm start test-frontend
 ```
